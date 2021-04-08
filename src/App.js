@@ -1,25 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import RedRoom from './components/RedRoom';
+import { Component } from 'react';
+import GreenRoom from './components/GreenRoom'
 
-function App() {
-  return (
+class App extends Component {
+  state = {
+    phrase: "HEY FROM THE APP",
+    numbers: [1, 2, 3, 4],
+    counter: 0
+  };
+
+  render() {
+    return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <p>App</p>
+        <RedRoom phrase={this.state.phrase} >
+          <GreenRoom test="UvU"/>
+        </RedRoom >
     </div>
-  );
+    );
+  }
 }
 
 export default App;
